@@ -1,0 +1,29 @@
+{
+  "name": "magic-key",
+  "version": "1.0.0",
+  "description": "Generate and validate magic key for Magic Links",
+  "main": "src/MagicKey.js",
+  "repository": "git@github.com:commit42/magic-key.git",
+  "author": "commit42 <team@commit42.fr>",
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "scripts": {
+    "commit": "git-cz",
+    "prettier": "prettier --write 'src/**/*.js'",
+    "test": "jest --watchAll"
+  },
+  "dependencies": {
+    "cryptr": "^4.0.2",
+    "email-validator": "^2.0.4"
+  },
+  "devDependencies": {
+    "commitizen": "^3.1.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "jest": "^24.8.0",
+    "prettier": "^1.17.1"
+  }
+}
