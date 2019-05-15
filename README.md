@@ -1,6 +1,6 @@
 # magic-key
 
-Generate and validate magic key for Magic Links
+A node librairy for generate and validate magic key for Magic Links
 
 ## Contribution
 

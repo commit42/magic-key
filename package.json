@@ -16,7 +16,10 @@
     "prettier": "prettier --write 'src/**/*.js'",
     "test": "jest --watchAll"
   },
-  "dependencies": {},
+  "dependencies": {
+    "cryptr": "^4.0.2",
+    "email-validator": "^2.0.4"
+  },
   "devDependencies": {
     "commitizen": "^3.1.1",
     "cz-conventional-changelog": "^2.1.0",
