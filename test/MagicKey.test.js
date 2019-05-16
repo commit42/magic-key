@@ -20,8 +20,8 @@ describe("MagicKey", () => {
       ]);
       expect(jsonResult.email).toBe(email);
       expect(jsonResult.clientVerificationKey).toBe(null);
-      expect(jsonResult.created).toBeGreaterThanOrEqual(Date.now() - 20);
-      expect(jsonResult.created).toBeLessThanOrEqual(Date.now() + 20);
+      expect(jsonResult.created).toBeGreaterThanOrEqual(Date.now() / 1000 - 20);
+      expect(jsonResult.created).toBeLessThanOrEqual(Date.now() / 1000 + 20);
     });
 
     test("can change privateKey", () => {
@@ -90,8 +90,12 @@ describe("MagicKey", () => {
       ]);
       expect(decryptedResult.email).toBe(email);
       expect(decryptedResult.clientVerificationKey).toBe(null);
-      expect(decryptedResult.created).toBeGreaterThanOrEqual(Date.now() - 20);
-      expect(decryptedResult.created).toBeLessThanOrEqual(Date.now() + 20);
+      expect(decryptedResult.created).toBeGreaterThanOrEqual(
+        Date.now() / 1000 - 20
+      );
+      expect(decryptedResult.created).toBeLessThanOrEqual(
+        Date.now() / 1000 + 20
+      );
     });
 
     test("return false if private key is not equal", () => {
@@ -139,7 +143,7 @@ describe("MagicKey", () => {
         JSON.stringify({
           email,
           clientVerificationKey: null,
-          created: Date.now() - 10
+          created: Date.now() / 1000 - 10
         })
       );
 
