@@ -24,7 +24,7 @@ module.exports = class MagicKey {
       JSON.stringify({
         email,
         clientVerificationKey,
-        created: Date.now()
+        created: this._getCurrentTimestamp()
       })
     );
   }
@@ -105,6 +105,10 @@ module.exports = class MagicKey {
       return false;
     }
 
-    return created + expire < Date.now();
+    return created + expire < this._getCurrentTimestamp();
+  }
+
+  _getCurrentTimestamp() {
+    return Date.now() / 1000;
   }
 };
