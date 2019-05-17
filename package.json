@@ -1,6 +1,6 @@
 {
   "name": "magic-key",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generate and validate magic key for Magic Links",
   "main": "src/MagicKey.js",
   "repository": "git@github.com:commit42/magic-key.git",

@@ -105,7 +105,7 @@ module.exports = class MagicKey {
       return false;
     }
 
-    return created + expire < this._getCurrentTimestamp();
+    return created + +expire < this._getCurrentTimestamp();
   }
 
   _getCurrentTimestamp() {

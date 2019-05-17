@@ -151,6 +151,25 @@ describe("MagicKey", () => {
       expect(magicKey.validateKey(expiredKey)).toBe(false);
     });
 
+    test("can expire even if expire is a string", () => {
+      const magicKey = new MagicKey({ expire: "2" }); // 2 sec
+      const email = "agathe.zeublouse@commit42.fr";
+
+      const key = magicKey.generateKey(email);
+
+      const cryptr = new Cryptr("changeMe!");
+      const expiredKey = cryptr.encrypt(
+        JSON.stringify({
+          email,
+          clientVerificationKey: null,
+          created: Date.now() / 1000 - 10
+        })
+      );
+
+      expect(magicKey.validateKey(key)).toBe(true);
+      expect(magicKey.validateKey(expiredKey)).toBe(false);
+    });
+
     test("can check with client key", () => {
       const magicKey = new MagicKey({ clientVerification: true });
       const email = "agathe.zeublouse@commit42.fr";
