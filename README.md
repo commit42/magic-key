@@ -27,7 +27,7 @@ const MagicKey = require("magic-key");
 const magicKey = new MagicKey({privateKey: "myPrivateKey"});
 const otherMagicKey = new MagicKey({privateKey: "otherPrivateKey"});
 
-// Générate key
+// Generate key
 const key = magicKey.generateKey("team@commit42.fr");
 
 // Check if key is valid
